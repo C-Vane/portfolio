@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import profilePic from "../../assets/ProfileImage.jpg";
+import profilePic from "../../assets/ProfileImage.png";
 
 const glow = keyframes`
 0%{
@@ -26,12 +26,12 @@ const glowSmall = keyframes`
 `;
 
 export const ProfileImage = styled.div`
-  width: 20vmax;
-  height: 20vmax;
+  width: 25vmax;
+  height: 30vmax;
   display: inline-block;
-  border-radius: 50%;
-  background-image: url(${profilePic});
-  background-size: 25vmax 25vmax;
+  background: url(${profilePic});
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: -1vmax 0.0001vmax;
   margin-top: calc(100vh - 25vmax);
 `;
