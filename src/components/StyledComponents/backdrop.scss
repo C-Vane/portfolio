@@ -11,7 +11,7 @@ $shadows-medium: multiple-box-shadow(200);
 $shadows-big: multiple-box-shadow(100);
 
 #backdrop {
-  height: 500vh;
+  height: 670vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -73,6 +73,9 @@ $shadows-big: multiple-box-shadow(100);
     background: transparent;
     box-shadow: $shadows-big;
   }
+}
+.mainStar {
+  position: absolute;
 }
 
 @keyframes animStar {

@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import profilePic from "../../assets/ProfileImage.png";
+import secondProfilePic from "../../assets/ProfileImage2.png";
 
 const glow = keyframes`
 0%{
@@ -36,6 +37,150 @@ export const ProfileImage = styled.div`
   margin-top: calc(100vh - 25vmax);
 `;
 
+export const SecondProfileImage = styled.div`
+  width: 30vmax;
+  height: 30vmax;
+  display: inline-block;
+  background: url(${secondProfilePic});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+`;
+
+export const Container = styled.div`
+  position: relative;
+  min-height: 110vh;
+  padding: 10vmin 10vmin 0 0;
+  width: 90vw;
+  margin: auto;
+  color: white;
+
+  font-family: "Poppins", sans-serif;
+  h2 + div {
+    padding-top: 7vmax;
+    h5 {
+      font-weight: bold;
+    }
+  }
+  h3 + div {
+    padding-top: 3vmax;
+    p {
+      padding-top: 1vmax;
+      width: 100%;
+      text-align: justify;
+      text-indent: 30px;
+      font-weight: 600;
+    }
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 4vmax;
+  }
+  .badges {
+    color: #000;
+    background: #fff;
+    padding: 0.3vmax 0.7vmax;
+    border-radius: 3px;
+    fonnt-size: 0.7vmax;
+    width: max-content;
+    float: right;
+    font-weight: bold;
+  }
+  .MuiButton-root {
+    color: #fff;
+  }
+`;
+
+export const AboutContainer = styled(Container)`
+  display: flex;
+  h2 {
+    position: absolute;
+    left: 0;
+  }
+  h2 + div {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2vmax;
+    border-radius: 10px;
+    margin-top: 5vmax;
+  }
+  ${SecondProfileImage} {
+    display: none;
+    width: 40%;
+    height: 90vh;
+    align-self: flex-end;
+  }
+  ${SecondProfileImage} + div {
+    width: 100%;
+    background: transparent;
+  }
+  .MuiButton-root {
+    margin-top: 3vh;
+  }
+  @media only screen and (min-width: 600px) {
+    ${SecondProfileImage} {
+      display: block;
+    }
+    ${SecondProfileImage} + div {
+      width: 60%;
+      background: transparent;
+    }
+  }
+`;
+export const SkillsContainer = styled(Container)`
+  & ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      height: 7vmax;
+      min-width: 7vmax;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      i {
+        font-size: 6vmax;
+      }
+      span {
+        font-size: 3vmax;
+        text-wrap: break-word;
+      }
+    }
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: vh;
+    margin-top: 6vh;
+  }
+`;
+export const ProjectsContainer = styled(Container)`
+  ul {
+    list-style-type: none;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    .details {
+      display: none;
+      height: 30vh;
+    }
+    li {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1vmax;
+      margin: 1vmax;
+      margin-bottom: 32vh;
+      min-width: 35vw;
+      border-radius: 10px;
+    }
+    li:hover {
+      margin-bottom: 1vmax;
+    }
+    li:hover .details {
+      display: block;
+    }
+  }
+`;
+export const ContactContainer = styled(Container)``;
+
 export const BigStar = styled.div`
   width: 3vmin;
   height: 3vmin;
@@ -47,7 +192,8 @@ export const BigStar = styled.div`
   &:hover {
     box-shadow: 0 0 15px 7px #fff, 0 0 30px 20px #f0f, 0 0 40px 30px #0ff;
   }
-  &:hover + .links {
+
+  &:hover + .links:hover {
     text-shadow: 3px 1px 15px #fff;
   }
   cursor: pointer;
@@ -67,11 +213,16 @@ export const SmallBearContainer = styled.div`
   background-color: red;
   position: relative;
   top: 30vh;
+  z-index: 3;
   .links {
     font-family: "Stardos Stencil", cursive;
     color: white;
     size: 6vmax;
     letter-spacing: 0.2em;
+    cursor: pointer;
+  }
+  .links:hover {
+    text-shadow: 3px 1px 15px #fff;
   }
   div {
     position: absolute;
@@ -127,7 +278,7 @@ export const SmallBearContainer = styled.div`
 
   .small-back ~ .links {
     top: 35vmin;
-    left: -4vmin;
+    left: -7vmin;
   }
 
   .big-back {
@@ -182,5 +333,26 @@ export const WelcomeContainer = styled.div`
     font-size: 1.5vmax;
     max-width: 30vw;
     margin: auto;
+  }
+
+  @media only screen and (max-width: 600px) {
+    h3 {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+  }
+
+  @media only screen and (min-width: 768px) {
+  }
+
+  @media only screen and (min-width: 992px) {
+    h3 {
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
   }
 `;
