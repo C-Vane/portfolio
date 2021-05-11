@@ -154,27 +154,39 @@ export const SkillsContainer = styled(Container)`
   }
 `;
 export const ProjectsContainer = styled(Container)`
-  ul {
+  ul.main-container {
     list-style-type: none;
     cursor: pointer;
     display: flex;
     flex-wrap: wrap;
+    font-weight: 800 !important;
+
     .details {
       display: none;
-      height: 30vh;
+      min-height: 30vh;
     }
-    li {
+    > li {
       background: rgba(255, 255, 255, 0.1);
       padding: 1vmax;
       margin: 1vmax;
       margin-bottom: 32vh;
-      min-width: 35vw;
       border-radius: 10px;
+      height: auto;
+      b {
+        font-family: "Roboto", sans-serif;
+      }
     }
-    li:hover {
+    @media only screen and (min-width: 768px) {
+      > li {
+        min-width: 35vw;
+        max-width: 35vw;
+      }
+    }
+
+    > li:hover {
       margin-bottom: 1vmax;
     }
-    li:hover .details {
+    > li:hover .details {
       display: block;
     }
   }
